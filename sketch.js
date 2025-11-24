@@ -14,7 +14,7 @@ function setup() {
       tam: random(1, 3),
       brillo: random(150, 255)
     });
-}
+} 
 }
 
 
