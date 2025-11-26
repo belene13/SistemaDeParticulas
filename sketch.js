@@ -7,29 +7,22 @@ function setup() {
   noCursor();
 
 
-  for (let i = 0; i < 400; i++) {
-    estrellas.push({
-      x: random(width),
-      y: random(height),
-      tam: random(1, 3),
-      brillo: random(150, 255)
-    });
-} 
-}
-
-
-function dibujarFondoEstrellado() {
-  for (let e of estrellas) {
-    noStroke();
-    fill(255, e.brillo);
-    circle(e.x, e.y, e.tam);
+  for (let i = 0; i < 100; i++) {
+		let ne = new Estrella();
+		estrellas.push(ne);
+    }
   }
-}
+  
 
 
 function draw() {
   background(0);
-  dibujarFondoEstrellado();
+
+
+  for (e of estrellas) {
+		e.update();
+		e.display();
+	}
 
 
   
@@ -46,7 +39,7 @@ function draw() {
 
 
 
-  // Actualizar y dibujar cada partícula
+  
   for (const [index, particula] of sp.entries()) {
     particula.update();
     particula.display();
